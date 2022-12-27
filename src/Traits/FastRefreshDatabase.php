@@ -49,7 +49,7 @@ trait FastRefreshDatabase
     protected function calculateMigrationChecksum(): string
     {
         $finder = Finder::create()
-            ->in(database_path('migrations'))
+            ->in(config('fast-refresh-database.paths'))
             ->name('*.php')
             ->ignoreDotFiles(true)
             ->ignoreVCS(true)
